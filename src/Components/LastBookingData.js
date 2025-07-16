@@ -15,7 +15,7 @@ const LastBookingData = (props) => {
     try {
       setLoader(true);
       setError("");
-      const res = await fetch("http://localhost:8081/api/booking", {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/booking`, {
         method: "GET",
       });
       const data = await res.json();

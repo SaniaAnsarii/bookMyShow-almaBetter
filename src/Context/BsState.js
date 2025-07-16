@@ -20,7 +20,7 @@ const BsState = (props) => {
     try {
         
         const res = await fetch(
-          `http://localhost:8081/api/booking`,
+          `${process.env.REACT_APP_BASE_URL}/api/booking`,
           {
             method: "POST",
             headers: {
