@@ -27,11 +27,9 @@ const storeBooking = async (req, res) => {
 
 const getBooking = async (req, res) => {
     try {
-        // find last booking of user 
         const dataArr = await BookingModel.find().sort({_id:-1}).limit(1);
         
         if (dataArr.length === 0) {
-            // if no booking found then print this message
             return res.status(200).json({
                 message:"No previous Booking found!",
                 status:200,
@@ -39,7 +37,6 @@ const getBooking = async (req, res) => {
             })    
         }
         
-        // have any booking then print this message
         return res.status(200).json({
             message:"last booking!",
             status:200,

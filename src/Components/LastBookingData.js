@@ -36,7 +36,7 @@ const LastBookingData = (props) => {
   };
 
   useEffect(() => {
-    getLastRecord(); // Fetch last booking on mount and when context changes
+    getLastRecord(); 
   }, [lastBookingDatas]);
 
   return (

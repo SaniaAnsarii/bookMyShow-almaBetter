@@ -7,13 +7,11 @@ import BsContext from "../Context/BsContext";
 const TimeShedule = () => {
   const context = useContext(BsContext);
 
-  // Getting time and change changeTime components from the context.
   const { time, changeTime } = context;
 
   const handleChangeTimeOnSubmit = (value) => {
     changeTime(value);
 
-    //setting slot in localstorage
     window.localStorage.setItem("slot", value);
   };
 

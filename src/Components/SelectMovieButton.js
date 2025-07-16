@@ -7,13 +7,11 @@ import "../styles/selectMovie.css";
 const SelectMovieButton = () => {
   const context = useContext(BsContext);
 
-  // Getting movie and change movie components from the context.
   const { movie, changeMovie } = context;
 
   const handleChangeMovie = (value) => {
     changeMovie(value);
 
-    //setting movie in localstorage
     window.localStorage.setItem("movie", value);
   };
 

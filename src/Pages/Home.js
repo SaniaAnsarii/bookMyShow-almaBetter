@@ -17,7 +17,6 @@ const Home = (props) => {
     handlePostBooking,
   } = context;
 
-  //check whether any seat has a negative value
   const checkNegativeSeatsValidity = (seats) => {
     for (let seat in seats) {
       if (Number(seats[seat]) < 0) {
@@ -28,7 +27,6 @@ const Home = (props) => {
     return false;
   };
 
-  //check whether all seats have input 0
   const checkZeroSeatsValidity = (seats) => {
     for (let seat in seats) {
       if (Number(seats[seat]) > 0) {
@@ -38,7 +36,6 @@ const Home = (props) => {
     return true;
   };
 
-  //validating the user selection and then making post request to save the booking details
   const handleBookNow = () => {
     if (!movie) {
       toast.error('Please select  a movie!', {
@@ -78,7 +75,6 @@ const Home = (props) => {
         theme: "light",
         });
     } else {
-      //validation successfull
       handlePostBooking();
       toast.success('Booking successfully', {
         position: "top-center",
